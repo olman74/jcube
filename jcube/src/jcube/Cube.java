@@ -15,9 +15,10 @@ public class Cube {
 		return c;
 	}
 	
-	public void loadAttributesFromFile(String url)
+	public Cube loadAttributesFromFile(String url)
 	{
 		this.urlTextFile = url;
+		return this;
 	}
 
 	public Integer numberOfFaces(){
@@ -25,7 +26,7 @@ public class Cube {
 	}
 
 	public String titreFace(int i) throws IOException{
-		BufferedReader reader = new BufferedReader(new FileReader(new File("templates/one-lineCube.txt")));
+		BufferedReader reader = new BufferedReader(new FileReader(new File(this.urlTextFile)));
 		String line = reader.readLine();
 		reader.close();
 		return line.substring(2);

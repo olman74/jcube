@@ -14,7 +14,7 @@ public class CubeFromOneLineTextFile {
 	@Before
 	public void createCubeTest()
 	{
-		cube = Cube.fromTextFile("templates/ine-line-cube.txt");
+		this.cube = Cube.fromTextFile("templates/one-lineCube.txt");
 	}
 
 	@Test
@@ -28,6 +28,8 @@ public class CubeFromOneLineTextFile {
 	{
 		assertEquals("une ligne", cube.titreFace(0));
 	}
+	
+
 	
 	
 }

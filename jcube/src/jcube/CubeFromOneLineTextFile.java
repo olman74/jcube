@@ -1,3 +1,4 @@
+
 package jcube;
 
 import static org.junit.Assert.*;
@@ -7,29 +8,13 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CubeFromOneLineTextFile {
-	
-	public Cube cube;
-	
-	@Before
-	public void createCubeTest()
-	{
-		this.cube = Cube.fromTextFile("templates/one-lineCube.txt");
-	}
-
+public class CubeFromOneLineTextFile {	
 	@Test
-	public void cubeShouldHaveAtLeastOneFace() 
-	{
-		assertEquals(new Integer(1), cube.numberOfFaces());
+	public void cubeShouldBeOneFaceWithCommentSortirDuCoursPlusTot() throws IOException {
+		Cube expectedCube = (new Cube())
+				.addFace("Comment sortir du cours plus tot");
+		
+		Cube actualCube = Cube.fromTextFile("templates/one-line-cube.txt");		
+		assertEquals(expectedCube, actualCube);
 	}
-	
-	@Test
-	public void titleFaceShouldBeUneLigne() throws IOException
-	{
-		assertEquals("une ligne", cube.titreFace(0));
-	}
-	
-
-	
-	
 }

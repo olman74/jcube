@@ -6,30 +6,27 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Cube {
-	
-	private String urlTextFile;
-	
-	public static Cube fromTextFile(String urlFile){
-		Cube c =  new Cube();
-		c.loadAttributesFromFile(urlFile);
-		return c;
+	private String faceOne;
+
+	public static Cube fromTextFile(String filepath) throws IOException {
+		Cube cube = new Cube();
+		return cube.loadFromFile(filepath);
 	}
-	
-	public Cube loadAttributesFromFile(String url)
-	{
-		this.urlTextFile = url;
+
+	private Cube loadFromFile(String filePath) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)));
+		this.addFace(reader.readLine().substring(2));
+		reader.close();
 		return this;
 	}
 
-	public Integer numberOfFaces(){
-		return 1;
-	}
 
-	public String titreFace(int i) throws IOException{
-		BufferedReader reader = new BufferedReader(new FileReader(new File(this.urlTextFile)));
-		String line = reader.readLine();
-		reader.close();
-		return line.substring(2);
+	public Cube addFace(String string) {
+		this.faceOne = string;
+		return this;
 	}
-
-}
+	
+	public boolean equals(Object other) {
+		Cube otherCube = (Cube)other;
+		return this.faceOne.equals(otherCube.faceOne);
+	}

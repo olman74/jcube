@@ -30,3 +30,4 @@ public class Cube {
 		Cube otherCube = (Cube)other;
 		return this.faceOne.equals(otherCube.faceOne);
 	}
+}

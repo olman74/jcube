@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CubeEqualityTest {
-
 	@Test
 	public void twoCubeWithOneDifferentFaceShouldNotBeEqual() {
 		Cube cubeGit = (new Cube()).addFace("Git");

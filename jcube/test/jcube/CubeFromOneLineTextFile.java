@@ -35,7 +35,7 @@ public class CubeFromOneLineTextFile {
 	@Test
 	public void theLineInTheFileTextShouldBeInSVGFile()throws Exception
 	{
-		XMLDocument doc = (XMLDocument) actualCube.toSVG("templates/cube.svg");
+		XMLDocument doc = (new SVGDocument()).fromCube(actualCube);
 		assertTrue(doc.match("//tspan[contains(text(), \"Comment sortir du cours plus tot\")]"));
 	}
 }

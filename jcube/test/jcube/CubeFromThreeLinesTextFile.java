@@ -8,20 +8,20 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CubeFromTwoLinesTextFile {
+public class CubeFromThreeLinesTextFile {
 	private Cube actualCube;
 	
 	
 	@Before
 	public void loadCubeFromTextFile() throws IOException
 	{
-		this.actualCube = Cube.fromTextFile("templates/two-line-cube.txt");	
+		this.actualCube = Cube.fromTextFile("templates/three-line-cube.txt");	
 	}
 	
 	@Test
 	public void cubeShouldBeOneFaceWithTitleAndAstuce() throws IOException {
 		Cube expectedCube = (new Cube())
-				.addFace("Comment sortir du cours plus tot", "S esquiver en cachette");
+				.addFace("Comment sortir du cours plus tot", "S esquiver en cachette", "Partir sur la pointe des pieds");
 		assertEquals(expectedCube, actualCube);
 	}
 	
@@ -36,6 +36,4 @@ public class CubeFromTwoLinesTextFile {
 
 	
 	
-	
-
 }

@@ -28,7 +28,7 @@ public class CubeFromThreeLinesTextFile {
 	@Test
 	public void cubeShouldNotBeOneFaceWithTitleAndAstuce() throws IOException {
 		Cube expectedCube = (new Cube())
-				.addFace("Comment sortir du cours plus tot", "S'esdddddtte");
+				.addFace("Comment sortir du cours plus tot", "Sesdddddtte","dtfrdgf");
 		assertFalse(expectedCube.equals( actualCube));
 	}
 	

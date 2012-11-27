@@ -10,7 +10,7 @@ public class Cube {
 		return (new CubeTextFile(filepath)).newCube();
 	}
 
-	public Cube addFace(String title, String astuce, String description) {
+	public Cube addFace(String title,String astuce, String description ) {
 		Face f = Face.créerFace(title, astuce, description);
 		this.face = f;  
 		return this;
@@ -23,6 +23,7 @@ public class Cube {
 	}
 	
 	public Cube addFace(String title) {
+		Cheat cheat = new Cheat();
 		Face f = Face.créerFace(title);
 		this.face = f;  
 		return this;

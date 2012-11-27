@@ -7,12 +7,12 @@ import java.io.IOException;
 
 
 
-public class CubeTextFile {
-	
+public class CubeTextFile 
+{
 	private String filepath;
-	String title;
-	String astuce;
-	String description;
+	String title="";
+	String astuce = "";
+	String description="";
 
 
 	public CubeTextFile(String filepath)
@@ -28,30 +28,21 @@ public class CubeTextFile {
 
 	while ((line = reader.readLine()) != null) 
 	{
-		if(line.substring(0,1).equals("*"))
+		if(line.substring(0,2).equals("* "))
 		{
-			if(line.substring(1,2).equals("*"))
-			{
-				astuce = line.substring(3);
-				
-				if(line.substring(2,3).equals("*"))
-				{
-					description = line.substring(4);
-				}
-				else
-				{
-					description = "";
-				}
-			}
-			else
-			{
-			title = line.substring(2);
-			astuce = "";
-			}
+			this.title = line.substring(2);
+		}
+		if(line.substring(0,3).equals("** "))
+		{
+			this.astuce = line.substring(3);
+		}
+		if(line.substring(0,4).equals("*** "))
+		{
+			this.description = line.substring(4);
 		}
 	}
 	reader.close();
-	cube.addFace(title, astuce);
+	cube.addFace(title, astuce, description);
 	reader.close();
 	return cube;
 	

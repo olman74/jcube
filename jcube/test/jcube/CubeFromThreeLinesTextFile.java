@@ -33,7 +33,12 @@ public class CubeFromThreeLinesTextFile {
 	}
 	
 	
-
+	public void theCheatDescriptionInTheFileTextShouldBeInSVGFile()throws Exception
+	{
+		XMLDocument doc = (new SVGDocument()).fromCube(actualCube);
+		assertTrue(doc.match("//tspan[contains(text(), \"Partir sur la pointe des pieds\")]"));
+		
+	}
 	
 	
 }

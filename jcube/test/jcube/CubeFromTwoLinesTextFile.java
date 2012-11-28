@@ -32,7 +32,12 @@ public class CubeFromTwoLinesTextFile {
 		assertFalse(expectedCube.equals( actualCube));
 	}
 	
-	
+	@Test
+	public void theCheatTitleInTheFileTextShouldBeInSVGFile()throws Exception
+	{
+		XMLDocument doc = (new SVGDocument()).fromCube(actualCube);
+		assertTrue(doc.match("//text[contains(text(), \"S esquiver en cachette\")]"));
+	}
 
 	
 	
